@@ -8,7 +8,7 @@ const getSleepHours = day => {
       case "Thursday": return 7
       case "Friday": return 9
       case "Saturday": return 9
-      case "Sunday": return 9
+      case "Sunday": return 8
       default: throw "Invalid"
     }
   }
@@ -62,7 +62,8 @@ if(actualSleepHours < idealSleepHours){
 } else if(actualSleepHours > idealSleepHours){
   hoursSlept = actualSleepHours - idealSleepHours
   return `You overslept by ${hoursSlept} hours.`
-
+} else{
+  return 'You slept for your ideal amount of hours.'
 }
 }
 
