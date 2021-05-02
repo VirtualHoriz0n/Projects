@@ -1,3 +1,5 @@
+
+//defines hours slept each day - Function is called in getActualSleepHours
 const getSleepHours = day => {
     switch(day){
       case "Monday": return 8
@@ -14,12 +16,13 @@ const getSleepHours = day => {
 const getActualSleepHours=()=> getSleepHours("Monday") + getSleepHours("Tuesday") + getSleepHours("Wednesday") + getSleepHours("Thursday") + getSleepHours("Friday") + getSleepHours("Saturday") + getSleepHours("Sunday")
 
 
+//Function that multiplies the ideal hours by number of days in week (7)
 const getIdealSleepHours =()=>{
-    const idealHours = 9
+    const idealHours = 7
     return idealHours * 7
 }
 
-//Working function below DO NOT DELETE UNLESS STEP 10 COMPLETE
+//Original Code - Didn't give hours Under/Over slept.
 /* 
 const calculateSleepDebt =()=>{
   const actualSleepHours = getActualSleepHours()
@@ -35,3 +38,18 @@ const calculateSleepDebt =()=>{
 */
 
 
+//let sleepCalc allows variable to be changed - if statement then checks if Actual < ideal - if so subtracts actual from ideal.    If actual > ideal - subtracts ideal from actual. Both sums update sleepCalc variable.
+const calculateSleepDebt =()=>{
+  let sleepCalc = 0
+  
+  if(getActualSleepHours() < getIdealSleepHours()){
+    sleepCalc = getIdealSleepHours() - getActualSleepHours()
+    return `You should have slept for another ${sleepCalc} hours.`
+  } else if(getActualSleepHours() > getIdealSleepHours()){
+    sleepCalc = getActualSleepHours() - getIdealSleepHours()
+    return `You overslept by ${sleepCalc} hours.`
+  }
+
+}
+
+console.log(calculateSleepDebt())
