@@ -35,7 +35,7 @@ console.log(secretMessage.indexOf('time,'))
 */
 
 //replaces elements from index 6 for 5 elements onwards and replaces with single string of 'know'
-secretMessage.splice(6,5 , 'know')
+secretMessage.splice(6,5 , 'know,')
 
 //Joins the elements of the array together with ' ' which leaves a space between elements. Then logs to console.
 console.log(secretMessage.join(' '))
