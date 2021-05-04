@@ -25,16 +25,18 @@ secretMessage.shift();
 //adds the element in '' to the beginning of the array.
 secretMessage.unshift('Programming');
 
-
+//line 29 - 33 index 5 elements of the array to produce their psotions. Was only needed for the .splice so can now be removed.
+/*
 console.log(secretMessage.indexOf('get'))
 console.log(secretMessage.indexOf('right'))
 console.log(secretMessage.indexOf('the'))
 console.log(secretMessage.indexOf('first'))
 console.log(secretMessage.indexOf('time,'))
+*/
 
-
+//replaces elements from index 6 for 5 elements onwards and replaces with single string of 'know'
 secretMessage.splice(6,5 , 'know')
 
-console.log(secretMessage)
-
+//Joins the elements of the array together with ' ' which leaves a space between elements. Then logs to console.
+console.log(secretMessage.join(' '))
 
